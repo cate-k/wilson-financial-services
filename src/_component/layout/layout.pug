@@ -1,0 +1,18 @@
+doctype html
+html
+    - var baseUrl = taskTarget === 'tmp' ? '' : '/wilson-financial-services'
+    head
+        title Wilson Financial Services
+        meta(
+            name="description",
+            content="Wilson Financial Services"
+        )
+        link(
+            rel="stylesheet",
+            href=`${baseUrl}style.css`
+        )
+    body
+        include ../banner/banner
+        include ../menu/menu
+        block content
+        include ../footer/footer

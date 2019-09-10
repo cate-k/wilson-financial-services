@@ -1,0 +1,624 @@
+//- General
+html,
+body {
+    height: 100%;
+    font-family: 'Josefin Sans';
+}
+
+//- Responsiveness
+@media screen and (min-width: 25em){
+    html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+}
+
+//- Announcement banner
+.announcement {
+    background-color: $color-midnight-blue;
+    color: white;
+    font-size: 0.5rem;
+    padding: 0.25rem;
+}
+
+.wfs--phone-call {
+    margin: 0.15rem;
+    margin-left: 1rem;
+}
+
+.wfs--mail {
+    margin: 0.15rem;
+    margin-left: 1rem;
+}
+
+.slogan {
+    margin-left: 3rem;
+}
+
+//- Nav menu
+.nav {
+    border: 1px solid $color-midnight-blue;
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+
+    a {
+        color: black;
+
+        &:hover {
+            color: $color-indigo;
+        }
+    }
+}
+
+.menu {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 0.5rem;
+
+    li {
+        display: inline;
+        margin: 0.5rem;
+    }
+}
+
+.logo {
+    background-image: url(asset/image/wfs-logo.png);
+    background-position: center;
+    background-size: cover;
+    height: 40px;
+    width: 235px;
+}
+
+//- Home page slideshow
+.container {
+    position: relative;
+    height: 80%;
+    width: 100%;
+    overflow: hidden;
+    
+    ul {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        li {
+            margin: 0 0 25px;
+
+            .slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                transition: transform 0.5s;
+                transform: rotateY(90deg);
+                transform-origin: left;
+
+                .content {
+                    color: white;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    text-align: center;
+                    transform: translate(-50%, -50%);
+                    width: 20rem;
+
+                    h2 {
+                        font-size: 1.5rem;
+                        text-transform: capitalize;
+                    }
+                }
+
+                .img-one {
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset/image/business-man.jpg);
+                    background-position: center;
+                    background-size: 100% 100%;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .img-two {
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset/image/team.jpg);
+                    background-position: center;
+                    background-size: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .img-three {
+                    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset/image/friends.jpg);
+                    background-position: center;
+                    background-size: 100% 100%;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            input[type="radio"] {
+                position: relative;
+                z-index: 1;
+                height: 20px;
+                width: 20px;
+
+                &:checked ~ .slide {
+                    transition: transform 0.5s;
+                    transform: rotateY(0deg);
+                    transform-origin: right;
+
+                    .img-one,
+                    .img-two,
+                    .img-three,
+                    .img-four {
+                        animation: animate 40s linear infinite;
+                    }
+
+                    @keyframes animate {
+                        0% {
+                            transform: scale(1);
+                        }
+                        50% {
+                            transform: scale(1.3);
+                        }
+                        100% {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//- How We Can Help
+.heading {
+    color: $color-indigo;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.help-icons {
+    width: 90%;
+    margin-left: 3rem;
+
+    & > div {
+        height: 7rem;
+        width: 10rem;
+        float: left;
+        margin-left: 10px;
+        margin-bottom: 1rem;
+    }
+}
+
+.icon-one,
+.icon-two,
+.icon-three,
+.icon-four,
+.icon-five,
+.icon-six {
+    border: 1px solid $color-silver;
+}
+
+.dark-text {
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.light-text {
+    color: $color-boulder;
+    font-size: 0.5rem;
+    margin-top: 0.3rem;
+    text-align: center;
+}
+
+.wfs--pie-chart,
+.wfs--user,
+.wfs--git-branch,
+.wfs--database,
+.wfs--trending-up,
+.wfs--cloud {
+    background-color: $color-venice-blue;
+    border: 1px solid $color-venice-blue;
+    border-radius: 50%;
+    color: white;
+    padding: 15px;
+    display: inline-block;
+    margin-left: 3.5rem;
+    margin-top: 0.2rem;
+}
+
+.wfs--pie-chart,
+.wfs--database {
+    &:hover {
+        background-color: $color-carrot-orange;
+        border: 1px solid $color-carrot-orange;
+    }
+}
+
+.wfs--user,
+.wfs--trending-up {
+    &:hover {
+        background-color: $color-sushi;
+        border: 1px solid $color-sushi;
+    }
+}
+
+.wfs--git-branch,
+.wfs--cloud {
+    &:hover {
+        background-color: $color-tapestry;
+        border: 1px solid $color-tapestry;
+    }
+}
+
+//- Testimonials
+.small-heading {
+    font-family: 'Ubuntu';
+    font-size: 0.6rem;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 50rem;
+}
+
+.larger-heading {
+    font-family: 'Ubuntu';
+    font-size: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 0.5rem;
+}
+
+.sushi-hr {
+    background-color: $color-sushi;
+    color: $color-sushi;
+    height: 0.1rem;
+    width: 1.5rem;
+}
+
+.start-quotation-marks {
+    color: $color-indigo;
+    margin-top: 0.5rem;
+    margin-left: 4.5rem;
+}
+
+.end-quotation-marks {
+    color: $color-indigo;
+    margin-top: 0.5rem;
+    margin-left: 18rem;
+}
+
+.quote {
+    font-size: 0.55rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.name {
+    font-size: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job {
+    color: $color-boulder;
+    font-size: 0.5rem;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//- Why Choose Us
+.why-choose-us {
+    background-color: $color-alabaster;
+    padding: 1.5rem;
+}
+
+.grey-text {
+    color: $color-boulder;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.checklist {
+    font-family: 'Josefin Sans';
+    color: $color-boulder;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+
+    .wfs--check {
+        color: $color-indigo;
+        margin-right: 0.2rem;
+    }
+}
+
+//- Ending text
+.grey-ending-text {
+    color: $color-boulder;
+    text-align: center;
+    font-size: 0.5rem;
+
+    a {
+        color: $color-atoll;
+
+        &:hover {
+            color: $color-darker-sushi;
+        }
+    }
+}
+
+//- Footer
+.footer-columns {
+    background-color: $color-darker-mine-shaft;
+    padding: 1.5rem;
+    display: flex;
+
+    p {
+        color: white;
+    }
+}
+
+.first-column {
+    font-size: 0.3rem;
+    margin-left: 1.5rem;
+    
+    .column-heading {
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        font-size: 0.5rem;
+    }
+    
+    p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.second-column {
+    margin-left: 10rem;
+
+    .wfs-xero {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .privacy-link {
+        color: $color-atoll;
+        font-size: 0.5rem;
+
+        &:hover {
+            color: $color-darker-sushi;
+        }
+    }
+
+    .wfs--facebook,
+    .wfs--linkedin {
+        color: $color-darker-mine-shaft;
+        font-size: 0.5rem;
+        border: 1px solid $color-grey;
+        border-radius: 50%;
+        background-color: $color-grey;
+        padding: 0.1rem;
+        
+        &:hover {
+            background-color: white;
+        }
+    }
+
+    .wfs--linkedin {
+        margin-left: 0.2rem;
+    }
+}
+
+.footer {
+    color: $color-mine-shaft;
+    font-family: 'Ubuntu';
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+//- About Us page
+.about-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(asset/image/office.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 7rem;
+    width: 100%;
+
+    p {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 3rem;
+    }
+}
+
+.value-heading {
+    color: $color-indigo;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 2rem;
+}
+
+.value-text {
+    color: $color-boulder;
+    text-align: center;
+    width: 40%;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 30%;
+}
+
+.silver-hr {
+    border: 1px solid $color-silver;
+    width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.about-heading {
+    color: $color-indigo;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-text {
+    color: $color-boulder;
+    vertical-align: middle;
+    width: 60%;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 20%;
+}
+
+.about-end {
+    color: black;
+    vertical-align: middle;
+    width: 60%;
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 20%;
+    margin-bottom: 1rem;
+}
+
+//- Our Services page
+.services-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(asset/image/working.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 7rem;
+    width: 100%;
+
+    p {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 3rem;
+    }
+}
+
+.text {
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.services-text {
+    color: $color-boulder;
+    text-align: center;
+    width: 50%;
+    font-size: 0.5rem;
+    margin-top: 0.7rem;
+    margin-left: 25%;
+}
+
+.service-list {
+    background-color: $color-alabaster;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.service-heading {
+    color: $color-indigo;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.wfs--check {
+    color: $color-indigo;
+    margin-right: 0.2rem;
+}
+
+.service-checklist {
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 9.2rem;
+}
+
+//- Contact Us page
+.contact-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(asset/image/team-working.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 7rem;
+    width: 100%;
+
+    p {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 3rem;
+    }
+}
+
+.contact-info {
+    h4 {
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: $color-boulder;
+        text-align: center;
+        font-size: 0.5rem;
+        margin-top: 0.2rem;
+    }
+}
+
+//- Privacy Policy
+.privacy-heading {
+    color: $color-emperor;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+}
+
+.supernova-hr {
+    color: $color-supernova;
+}
+
+.bold-heading {
+    font-size: 0.5rem;
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+}
+
+.lorem-text {
+    color: $color-boulder;
+    font-size: 0.5rem;
+    margin-top: 0.8rem;
+    margin-left: 2.5rem;
+    width: 75%;
+}
+
+.privacy-details {
+    font-size: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
+    width: 75%;
+    
+    p {
+        margin-top: 0.1rem;
+    }
+}
+
+.closing-text {
+    color: $color-boulder;
+    font-size: 0.5rem;
+    margin-top: 0.8rem;
+    margin-left: 2.5rem;
+    margin-bottom: 0.5rem;
+    width: 75%;
+}
