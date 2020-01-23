@@ -1,130 +1,144 @@
 @media (min-width: 1280px) {
-    //- Announcement banner
-    .wfs--phone-call {
-        margin-left: 1rem;
+  //- Announcement banner
+  .wfs--phone-call {
+    margin-left: 1rem;
+  }
+
+  .slogan {
+    margin-left: 18rem;
+  }
+
+  //- Nav menu
+  .menu {
+    margin-top: 0.2rem;
+    margin-left: 19rem;
+  }
+
+  .logo {
+    margin-left: 1.2rem;
+  }
+
+  //- Home page slideshow
+  .container {
+    height: 90%;
+    width: 100%;
+
+    .content {
+      font-size: 0.7rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      width: 20rem;
+    }
+  }
+
+  //- How we can help
+  .help-icons {
+    & > div {
+      width: 10rem;
+      float: left;
+      margin-left: 4.5%;
+    }
+  }
+
+  .wfs--pie-chart,
+  .wfs--user,
+  .wfs--git-branch,
+  .wfs--database,
+  .wfs--trending-up,
+  .wfs--cloud {
+    margin-top: 0.5rem;
+  }
+
+  //- Testimonials
+  .small-heading {
+    font-family: "Ubuntu";
+    font-size: 0.6rem;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 18rem;
+  }
+
+  .start-quotation-marks {
+    color: $color-indigo;
+    margin-top: 0.5rem;
+    margin-left: 10rem;
+  }
+
+  //- Why Choose Us
+  .checklist {
+    margin-left: 3.5rem;
+  }
+
+  //- Footer
+  .footer-columns {
+    background-color: $color-darker-mine-shaft;
+    padding: 1.5rem;
+    display: flex;
+
+    p {
+      color: white;
+    }
+  }
+
+  .first-column {
+    font-size: 0.3rem;
+    margin-left: 5rem;
+
+    .column-heading {
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      font-size: 0.5rem;
     }
 
-    .slogan {
-        margin-left: 18rem;
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .second-column {
+    margin-left: 10rem;
+
+    .wfs-xero {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
 
-    //- Nav menu
-    .menu {
-        margin-top: 0.35rem;
-        margin-left: 19rem;
+    .privacy-link {
+      color: $color-atoll;
+      font-size: 0.5rem;
+
+      &:hover {
+        color: $color-darker-sushi;
+      }
     }
 
-    .logo {
-        margin-left: 1.2rem;
+    .wfs-facebook,
+    .wfs-linkedin {
+      color: $color-darker-mine-shaft;
+      font-size: 0.5rem;
+      border: 1px solid $color-grey;
+      border-radius: 50%;
+      background-color: $color-grey;
+      padding: 0.1rem;
+
+      &:hover {
+        background-color: white;
+      }
     }
 
-    //- Home page slideshow
-    .container {
-        height: 90%;
-        width: 100%;
-
-        .content {
-            font-size: 0.7rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            text-align: center;
-            transform: translate(-50%, -50%);
-            width: 20rem;
-        }
+    .wfs-linkedin {
+      margin-left: 0.2rem;
     }
+  }
 
-    //- How we can help
-    .wfs--pie-chart,
-    .wfs--user,
-    .wfs--git-branch,
-    .wfs--database,
-    .wfs--trending-up,
-    .wfs--cloud {
-        margin-top: 0.5rem;
-    }
-
-    //- Testimonials
-    .small-heading {
-        font-family: 'Ubuntu';
-        font-size: 0.6rem;
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    .start-quotation-marks {
-        color: $color-indigo;
-        margin-top: 0.5rem;
-        margin-left: 10rem;
-    }
-
-    //- Footer
-    .footer-columns {
-        background-color: $color-darker-mine-shaft;
-        padding: 1.5rem;
-        display: flex;
-
-        p {
-            color: white;
-        }
-    }
-
-    .first-column {
-        font-size: 0.3rem;
-        margin-left: 5rem;
-        
-        .column-heading {
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            font-size: 0.5rem;
-        }
-        
-        p {
-            margin-bottom: 0.5rem;
-        }
-    }
-
-    .second-column {
-        margin-left: 10rem;
-
-        .wfs-xero {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .privacy-link {
-            color: $color-atoll;
-            font-size: 0.5rem;
-
-            &:hover {
-                color: $color-darker-sushi;
-            }
-        }
-
-        .wfs-facebook,
-        .wfs-linkedin {
-            color: $color-darker-mine-shaft;
-            font-size: 0.5rem;
-            border: 1px solid $color-grey;
-            border-radius: 50%;
-            background-color: $color-grey;
-            padding: 0.1rem;
-            
-            &:hover {
-                background-color: white;
-            }
-        }
-
-        .wfs-linkedin {
-            margin-left: 0.2rem;
-        }
-    }
-
-    .footer {
-        color: $color-mine-shaft;
-        font-family: 'Ubuntu';
-        font-size: 0.5rem;
-        padding: 0.5rem;
-        text-align: center;
-    }
+  .footer {
+    color: $color-mine-shaft;
+    font-family: "Ubuntu";
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+  }
 }
